@@ -19,7 +19,7 @@
 -->
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-           id="cordova-plugin-inappbrowser"
+           id="cordova-plugin-sunbirdinappbrowser"
       version="3.1.0-dev">
 
     <name>InAppBrowser</name>
@@ -40,14 +40,14 @@
             <clobbers target="window.open" />
         </js-module>
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="InAppBrowser">
-                <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser"/>
+            <feature name="SunbirdInAppBrowser">
+                <param name="android-package" value="org.apache.cordova.sunbirdinappbrowser.SunbirdInAppBrowser"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/InAppBrowser.java" target-dir="src/org/apache/cordova/inappbrowser" />
-        <source-file src="src/android/InAppBrowserDialog.java" target-dir="src/org/apache/cordova/inappbrowser" />
-        <source-file src="src/android/InAppChromeClient.java" target-dir="src/org/apache/cordova/inappbrowser" />
+        <source-file src="src/android/SunbirdInAppBrowser.java" target-dir="src/org/apache/cordova/sunbirdinappbrowser" />
+        <source-file src="src/android/SunbirdInAppBrowserDialog.java" target-dir="src/org/apache/cordova/sunbirdinappbrowser" />
+        <source-file src="src/android/SunbirdInAppChromeClient.java" target-dir="src/org/apache/cordova/sunbirdinappbrowser" />
 
         <!--  drawable src/android/resources -->
         <resource-file src="src/android/res/drawable-hdpi/ic_action_next_item.png" target="res/drawable-hdpi/ic_action_next_item.png" />

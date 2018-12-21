@@ -16,7 +16,7 @@
        specific language governing permissions and limitations
        under the License.
 */
-package org.apache.cordova.inappbrowser;
+package org.apache.cordova.sunbirdinappbrowser;
 
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.LOG;
@@ -31,13 +31,13 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.webkit.GeolocationPermissions.Callback;
 
-public class InAppChromeClient extends WebChromeClient {
+public class SunbirdInAppChromeClient extends WebChromeClient {
 
     private CordovaWebView webView;
-    private String LOG_TAG = "InAppChromeClient";
+    private String LOG_TAG = "SunbirdInAppChromeClient";
     private long MAX_QUOTA = 100 * 1024 * 1024;
 
-    public InAppChromeClient(CordovaWebView webView) {
+    public SunbirdInAppChromeClient(CordovaWebView webView) {
         super();
         this.webView = webView;
     }
@@ -76,8 +76,8 @@ public class InAppChromeClient extends WebChromeClient {
      * If the client returns true, WebView will assume that the client will
      * handle the prompt dialog and call the appropriate JsPromptResult method.
      *
-     * The prompt bridge provided for the InAppBrowser is capable of executing any
-     * oustanding callback belonging to the InAppBrowser plugin. Care has been
+     * The prompt bridge provided for the SunbirdInAppBrowser is capable of executing any
+     * oustanding callback belonging to the SunbirdInAppBrowser plugin. Care has been
      * taken that other callbacks cannot be triggered, and that no other code
      * execution is possible.
      *
@@ -104,7 +104,7 @@ public class InAppChromeClient extends WebChromeClient {
             if(defaultValue.startsWith("gap-iab://")) {
                 PluginResult scriptResult;
                 String scriptCallbackId = defaultValue.substring(10);
-                if (scriptCallbackId.startsWith("InAppBrowser")) {
+                if (scriptCallbackId.startsWith("SunbirdInAppBrowser")) {
                     if(message == null || message.length() == 0) {
                         scriptResult = new PluginResult(PluginResult.Status.OK, new JSONArray());
                     } else {
@@ -122,7 +122,7 @@ public class InAppChromeClient extends WebChromeClient {
             else
             {
                 // Anything else with a gap: prefix should get this message
-                LOG.w(LOG_TAG, "InAppBrowser does not support Cordova API calls: " + url + " " + defaultValue); 
+                LOG.w(LOG_TAG, "SunbirdInAppBrowser does not support Cordova API calls: " + url + " " + defaultValue);
                 result.cancel();
                 return true;
             }
